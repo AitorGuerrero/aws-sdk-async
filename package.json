@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "types": "./lib.d/index.d.ts",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "preversion": "npm run testInstalls",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
