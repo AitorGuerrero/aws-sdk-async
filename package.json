@@ -1,0 +1,30 @@
+{
+  "name": "aws-sdk-async",
+  "version": "0.0.0",
+  "description": "Async version of aws-sdk",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testInstalls": "npm install . -g",
+    "testBuilds": "tsc --noEmit",
+    "testStyle": "tslint -p .",
+    "precommit": "npm run testStyle && npm run testBuilds && npm run testInstalls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AitorGuerrero/aws-sdk-async.git"
+  },
+  "author": "Aitor Guerrero<aguerrerolasarte@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AitorGuerrero/aws-sdk-async/issues"
+  },
+  "homepage": "https://github.com/AitorGuerrero/aws-sdk-async#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.34",
+    "aws-sdk": "^2.133.0",
+    "husky": "^0.14.3",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  }
+}
