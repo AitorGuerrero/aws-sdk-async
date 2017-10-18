@@ -4,7 +4,7 @@
     "target": "es2015",
     "noImplicitAny": true,
     "sourceMap": false,
-    "outDir": "dist"
+    "outDir": "lib"
   },
   "exclude": [
     "node_modules"

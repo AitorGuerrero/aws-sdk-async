@@ -2,7 +2,8 @@
   "name": "aws-sdk-async",
   "version": "1.0.0-0",
   "description": "Async version of aws-sdk",
-  "main": "dist/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/main.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "testInstalls": "npm install . -g",
