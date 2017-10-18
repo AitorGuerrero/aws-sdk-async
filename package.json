@@ -3,7 +3,7 @@
   "version": "1.0.0-2",
   "description": "Async version of aws-sdk",
   "main": "./lib/index.js",
-  "types": "./lib/main.d.ts",
+  "types": "./lib.d/index.d.ts",
   "scripts": {
     "prepublish": "npm run build && npm run testInstalls",
     "test": "echo \"Error: no test specified\" && exit 1",
