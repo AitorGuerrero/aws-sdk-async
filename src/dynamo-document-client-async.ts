@@ -27,8 +27,8 @@ export class DynamoDocumentClientAsync implements IDynamoDocumentClientAsync {
 		);
 	}
 
-	public async query(input: DocumentClient.GetItemInput) {
-		return new Promise<DocumentClient.ScanOutput>(
+	public async query(input: DocumentClient.QueryInput) {
+		return new Promise<DocumentClient.QueryOutput>(
 			(rs, rj) => this.dc.scan(input, (err, data) => err ? rj(err) : rs(data)),
 		);
 	}
