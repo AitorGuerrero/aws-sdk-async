@@ -5,15 +5,14 @@
   "main": "./lib/index.js",
   "types": "./lib.d/index.d.ts",
   "scripts": {
-    "prepare": "npm run build",
-    "preversion": "npm run check:install",
+    "preversion": "npm install && npm run build && npm run check:install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rm -Rf ./lib && rm -Rf ./lib.d",
     "build": "tsc",
     "check:install": "npm install . -g",
     "check:build": "tsc --noEmit",
     "check:style": "tslint -p .",
-    "precommit": "npm run check:style && npm run check:build"
+    "precommit": "npm install && npm run check:style && npm run check:build"
   },
   "repository": {
     "type": "git",
