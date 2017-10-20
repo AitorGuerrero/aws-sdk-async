@@ -9,6 +9,8 @@ export class LambdaAsync implements ILambdaAsync {
 	constructor(private lambda: Lambda) {}
 
 	public invoke(r: InvocationRequest) {
-		return new Promise((rs, rj) => this.lambda.invoke(r, (err, data) => err ? rj(err) : rs(data)));
+		return new Promise<InvocationResponse>(
+			(rs, rj) => this.lambda.invoke(r, (err, data) => err ? rj(err) : rs(data)),
+		);
 	}
 }
