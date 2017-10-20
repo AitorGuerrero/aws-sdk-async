@@ -6,14 +6,14 @@
   "types": "./lib.d/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
-    "preversion": "npm run testInstalls",
+    "preversion": "npm run check:install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rm -Rf ./lib && rm -Rf ./lib.d",
     "build": "tsc",
-    "testInstalls": "npm install . -g",
-    "testBuilds": "tsc --noEmit",
-    "testStyle": "tslint -p .",
-    "precommit": "npm run testStyle && npm run testBuilds"
+    "check:install": "npm install . -g",
+    "check:build": "tsc --noEmit",
+    "check:style": "tslint -p .",
+    "precommit": "npm run check:style && npm run check:build"
   },
   "repository": {
     "type": "git",
