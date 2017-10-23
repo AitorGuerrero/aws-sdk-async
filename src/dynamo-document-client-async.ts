@@ -29,7 +29,7 @@ export class DynamoDocumentClientAsync implements IDynamoDocumentClientAsync {
 
 	public async query(input: DocumentClient.QueryInput) {
 		return new Promise<DocumentClient.QueryOutput>(
-			(rs, rj) => this.dc.scan(input, (err, data) => err ? rj(err) : rs(data)),
+			(rs, rj) => this.dc.query(input, (err, data) => err ? rj(err) : rs(data)),
 		);
 	}
 
@@ -41,7 +41,7 @@ export class DynamoDocumentClientAsync implements IDynamoDocumentClientAsync {
 
 	public async update(input: DocumentClient.UpdateItemInput) {
 		return new Promise<DocumentClient.UpdateItemOutput>(
-			(rs, rj) => this.dc.get(input, (err, data) => err ? rj(err) : rs(data)),
+			(rs, rj) => this.dc.update(input, (err, data) => err ? rj(err) : rs(data)),
 		);
 	}
 
