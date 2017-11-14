@@ -4,6 +4,7 @@ export interface IS3Async {
 	putObject(i: S3.PutObjectRequest): Promise<S3.PutObjectOutput>;
 	upload(i: S3.PutObjectRequest, options?: S3.ManagedUpload.ManagedUploadOptions): Promise<S3.ManagedUpload.SendData>;
 	getObject(r: S3.GetObjectRequest): Promise<S3.GetObjectOutput>;
+	copyObject(r: S3.CopyObjectRequest): Promise<S3.CopyObjectOutput>;
 }
 
 export class S3Async implements IS3Async {
@@ -22,9 +23,15 @@ export class S3Async implements IS3Async {
 		);
 	}
 
-	public async getObject(i: S3.Types.GetObjectRequest) {
+	public async getObject(i: S3.GetObjectRequest) {
 		return new Promise<S3.GetObjectOutput>(
 			(rs, rj) => this.s3.getObject(i, (err, r) => err ? rj(err) : rs(r)),
+		);
+	}
+
+	public async copyObject(i: S3.CopyObjectRequest) {
+		return new Promise<S3.CopyObjectOutput>(
+			(rs, rj) => this.s3.copyObject(i, (err, r) => err ? rj(err) : rs(r)),
 		);
 	}
 }
